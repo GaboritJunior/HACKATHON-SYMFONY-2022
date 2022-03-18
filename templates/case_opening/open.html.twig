@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CaseOpeningController!{% endblock %}
+
+{% block body %}
+
+
+    <main class="guild">
+        <h2 class="guild__title">Vous avez gagné :</h2>
+        <ul class="guild-list">
+            {% if equipment %}
+                <li class="guild-list__item">
+                    <span class="name">  {{ characterEquipment.ilvl }} Niveau d'objet </span>
+                    <span class="owner"> {{ equipment.name }}</span>
+                    <span class="owner"> {{ equipment.equipmentType.name }}</span>
+                    <span class="owner"> {{ equipment.rarity.name }}</span>
+                </li>
+            {% else %}
+            <p>Tu n'as plus d'argent ! </p>
+            {% endif %}
+            <a href="{{ path('app_case_opening') }}">Revenir aux ouverture</a>
+        </ul>
+    </main>
+
+{% endblock %}

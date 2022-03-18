@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guilde{% endblock %}
+
+{% block body %}
+    <main class="guild">
+        <section class="guild-button">
+        <a href="{{ path('app_guild_new') }}"><span class="button">Créer une guilde </span></a>
+        <span class="text">OU</span>
+        <a href="{{ path('app_guild_list') }}"><span class="link">Rejoindre une guilde</span></a>
+        </section>
+    </main>
+{% endblock %}

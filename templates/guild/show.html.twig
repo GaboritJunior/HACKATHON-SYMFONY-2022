@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guild{% endblock %}
+
+{% block body %}
+    <main class="guild-members">
+        <section class="header">
+            <div>
+                <h2 class="guild-members__title">{{ guild.name }}</h2>
+                <span class="members">Membres : {{ characters | length }} / 25</span>
+            </div>
+            {% if isGuildMember %}
+                <a class="header__link header__link--red" href="{{ path('app_guild_leave', {'id': guild.id}) }}">Quitter la guilde</a>
+            {% else %}
+                <a class="header__link header__link--red" href="{{ path('app_guild_join', {'id': guild.id}) }}">Rejoindre la guilde</a>
+            {% endif %}
+        </section>
+        {% if characters is not empty %}
+        <ul class="guild-members-list">
+            {% for character in characters %}
+            <li class="guild-members-list__item">
+
+                <span class="name">{{ character.username }}</span>
+                {% if character.id == guild.creator.id %}
+                    <img class="crown-icon" src="{{ asset('images/crown.svg') }}" />
+                {% endif %}
+                <span class="level">Nv. 48</span>
+                <span class="class">classe: {{ character.speciality }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <span>
+            Il n'y a pas encore de membre dans cette guilde
+        </span>
+        {% endif %}
+    </main>
+{% endblock %}
+

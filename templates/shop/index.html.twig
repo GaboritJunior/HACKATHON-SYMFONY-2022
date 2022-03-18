@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Shop index{% endblock %}
+
+{% block body %}
+    <main class="shop">
+        <h2 class="shop__title">shop</h2>
+        <span class="money">Vous avez actuellement {{ character.money }} <i class="fa-solid fa-coins"></i></span>
+        <ul class="shop-list">
+            {% for shop in shops %}
+            <li class="shop-list__item">
+                <span class="icon">
+                    <i class="fa-solid fa-helmet-safety"></i>
+                </span>
+                <span class="level">Nv. {{ shop.ilvl }}</span>
+                <span class="rarity">{{ shop.equipment.rarity }}</span>
+                <span class="name">{{ shop.equipment.name }}</span>
+                <a href="{{ path('app_shop_buy', {'id': shop.id}) }}">
+                    <span class="price">Acheter {{ shop.price }} <i class="fa-solid fa-coins"></i>
+                    </span>
+                </a>
+            </li>
+            {% else %}
+                <span>La boutique est actuellement fermé !</span>
+            {% endfor %}
+        </ul>
+    </main>
+{% endblock %}

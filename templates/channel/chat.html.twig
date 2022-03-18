@@ -1,0 +1,96 @@
+{# templates/channel/chat.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Chat{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        <h1>Channel {{ channel.name }}</h1>
+        <div class="container" style="height: 600px">
+            <div class="container bg-light h-75 overflow-auto">
+                {% for message in messages %}
+                    {% if app.user == message.author %}
+                        <div class="row w-75 float-right">
+                            <b>{{ message.author.username }}</b>
+                            <p class="alert alert-info w-100">
+                                {{ message.content }}
+                            </p>
+                        </div>
+                    {% else %}
+                        <div class="row w-75 float-left">
+                            <b>{{ message.author.username }}</b>
+                            <p class="alert alert-success w-100">
+                                {{ message.content }}
+                            </p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div>
+                <form id="form" class="container row">
+                    <input id="message" class="input-group-text col-sm-9" placeholder="Message" type="text" />
+                    <button id="submit" type="submit" class="btn btn-success col-sm-3">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        {% block javascript %}
+        let chatDiv = document.querySelector('.overflow-auto');
+        chatDiv.scrollTop = chatDiv.scrollHeight; // On souhaite scroller toujours jusqu'au dernier message du chat
+
+        let form = document.getElementById('form');
+        function handleForm(event) {
+            event.preventDefault();// Empêche la page de se rafraîchir après le submit du formulaire
+        }
+        form.addEventListener('submit', handleForm);
+
+        //const hubUrl = response.headers.get('Link').match(/<([^>]+)>;\s+rel=(?:mercure|"[^"]*mercure[^"]*")/)[1];
+
+
+        const url = new URL('http://hackathon.localhost:3000/.well-known/mercure');
+        url.searchParams.append('topic', 'http://hackathon.localhost:8000/channel/{id}');
+        console.log(url);
+
+        const eventSource = new EventSource(url);
+
+        eventSource.onmessage = ({data}) => {
+            const message = JSON.parse(data);
+            document.querySelector('.bg-light').insertAdjacentHTML(
+                'beforeend',
+                appUser === message.author.id ?
+                    `<div class="row w-75 float-right">
+                    <b>${message.author.email}</b>
+                    <p class="alert alert-info w-100">${message.content}</p>
+                </div>` :
+                    `<div class="row w-75 float-left">
+                    <b>${message.author.email}</b>
+                    <p class="alert alert-success w-100">${message.content}</p>
+                </div>`
+            )
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+        }
+
+        const appUser = {{ app.user.id }};
+
+        const submit = document.getElementById('submit');
+        submit.onclick = e => {
+            const message = document.getElementById('message');
+            const data = {
+                'content': message.value,
+                'channel': {{ channel.id }}
+            }
+            console.log(data);
+            fetch('/message', {
+                method: 'POST',
+                body: JSON.stringify(data)
+            }).then((response) => {
+                message.value = '';
+                console.log(response);
+            });
+        }
+        {% endblock javascript %}
+    </script>
+{% endblock %}

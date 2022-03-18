@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Shop{% endblock %}
+
+{% block body %}
+    <main class="shop">
+        <h2 class="shop__title">Merci pour votre achat</h2>
+        <a class="money" href="{{ path('app_shop_index') }}">Revenir à la boutique</a>
+    </main>
+
+{% endblock %}

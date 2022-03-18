@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guild index{% endblock %}
+
+{% block body %}
+    <main class="guild">
+        <h2 class="guild__title">Liste des guildes</h2>
+        <ul class="guild-list">
+            {% for guild in guilds %}
+            <li class="guild-list__item">
+                <span class="name">{{ guild.name }}</span>
+                <span class="owner">chef : {{ guild.creator }}</span>
+                <a href="{{ path('app_guild_show', {'id': guild.id}) }}">
+                    <span class="button">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </a>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </main>
+{% endblock %}

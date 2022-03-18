@@ -1,0 +1,655 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&display=swap");
+html {
+    font-size: 62.5%;
+
+}
+
+body {
+    font-size: 1.4rem;
+    /* 14px par défaut */
+    width: 100vw;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+
+}
+
+a, a:hover, a:visited {
+    /* ATTENTION LES LIENS SONT BLANC DANS CE MODELE*/
+    text-decoration: none;
+    color: black;
+}
+
+.header {
+    height: 15vh;
+}
+
+.header-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+
+}
+.header-nav__img {
+    width: 140px;
+}
+.header-nav__link {
+    margin-left: 5%;
+}
+.header-nav-items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.header-nav-items__item {
+    margin: 3rem;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+.header-nav-items__item--game {
+    background-color: #E35748;
+    padding: 2rem;
+    font-size: 5rem;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+.header-nav-items__item--game:hover {
+    background-color: #CA376D;
+}
+.header-nav-items__item--game a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: rgba(37, 37, 37, 0.651) 1px 8px 2rem;
+}
+
+.body {
+    position: relative;
+    background: -webkit-gradient(linear, right top, left top, from(#BD2580), to(#ED6439));
+    background: linear-gradient(to left, #BD2580 0%, #ED6439 100%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 85vh;
+    z-index: 10;
+    overflow: hidden;
+}
+.body__title {
+    color: #fff;
+    text-shadow: black 20px 20px 5rem;
+    font-size: 4rem;
+    width: 40%;
+    z-index: 2;
+    text-align: center;
+    margin-top: 10%;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 50px;
+    letter-spacing: 2px;
+}
+.body__subtitle {
+    color: #fff;
+    margin-top: 5%;
+    font-size: 2rem;
+    width: 25%;
+    text-align: center;
+    text-shadow: black 1px 25px 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 1.5px;
+}
+.body__img {
+    position: absolute;
+
+}
+.body__img--ma1 {
+    right: 50px;
+    bottom: 0;
+    width: 40%;
+}
+.body__img--ma2 {
+    left: 50px;
+    bottom: 0;
+    image-orientation: flip;
+    width: 37%;
+}
+.body__img--p1 {
+    bottom: -130px;
+    width: 30%;
+    left: 0;
+    z-index: 5;
+}
+.body__img--p2 {
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    z-index: 5;
+}
+.body__img--sword {
+    width: 10%;
+    bottom: 0;
+}
+
+.connexion {
+    background: -webkit-gradient(linear, right top, left top, from(#BD2580), to(#ED6439));
+    background: linear-gradient(to left, #BD2580 0%, #ED6439 100%);
+    height: 85vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #7FB7B8;
+}
+
+.btn-warning {
+    background-color: #B43C19;
+    color: #fff;
+}
+
+.card{
+    transition: 0.5s;
+    padding: 3rem;
+}
+
+
+.game {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.game canvas {
+    background: #dfdfdf;
+}
+
+
+
+.form-control{
+    margin: 1rem 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.h3{
+    padding : 1rem 0 1rem 0;
+}
+
+.guild {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.guild .button {
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    background: linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    cursor: pointer;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 1.2rem;
+    width: fit-content;
+}
+.guild .button i {
+    color: #fff;
+    font-size: 1.2rem;
+}
+.guild .text {
+    font-family: "Poppins", sans-serif;
+    margin: 2rem 0;
+}
+.guild .link {
+    cursor: pointer;
+    line-height: 2;
+    font-family: Poppins;
+    font-size: 1.2rem;
+    background: -webkit-linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.guild__title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 2;
+    margin-bottom: 4rem;
+    background: -webkit-linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+.guild-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+.guild-list__item {
+    width: 70%;
+    align-items: center;
+    display: flex;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+
+}
+.guild-list__item .name {
+    font-family: Poppins;
+    font-size: 1rem;
+}
+.guild-list__item .owner {
+    font-family: Poppins;
+    font-size: 1rem;
+    color: #6A6A6A;
+    font-weight: 300;
+}
+.guild-list__item .button {
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    cursor: pointer;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 2rem;
+    width: 5rem;
+    height: 5rem;
+}
+.guild-list__item .button i {
+    color: #fff;
+    font-size: 2rem;
+}
+.guild-list__item .button__icon {
+    width: 2rem;
+}
+
+.guild-members {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+.guild-members .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin-bottom: 3rem;
+}
+.guild-members .header__link {
+    position: relative;
+    font-size: 1rem;
+    font-family: Poppins;
+}
+.guild-members .header__link::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -7px;
+    left: 0;
+    background-color: #AE0000;
+}
+
+.guild-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.guild-members .header__link--red {
+    color: #AE0000;
+}
+.guild-members .header .members {
+    font-family: Poppins;
+    font-size: 1.25rem;
+    color: #303030;
+}
+.guild-members .button {
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    padding: 3rem;
+    background: linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    cursor: pointer;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 2rem;
+    width: fit-content;
+}
+.guild-members .button i {
+    color: #fff;
+    font-size: 2rem;
+}
+.guild-members .text {
+    margin-bottom: 2rem;
+}
+.guild-members .link {
+    cursor: pointer;
+    line-height: 2;
+    font-family: Poppins;
+    font-size: 2rem;
+    background: -webkit-linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.guild-members__title {
+    font-family: Poppins;
+    font-style: normal;
+    align-self: flex-start;
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 2;
+    background: -webkit-linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+.guild-members-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+.guild-members-list__item {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+.guild-members-list__item .name {
+    font-family: Poppins;
+    font-size: 1.5rem;
+    margin-right: 6rem;
+}
+.guild-members-list__item .crown-icon {
+    width: 20px;
+    margin-right: 2rem;
+}
+.guild-members-list__item .level, .guild-members-list__item .class {
+    font-family: Poppins;
+    font-size: 1.25rem;
+    color: #6A6A6A;
+    font-weight: 300;
+    margin-right: 6rem;
+}
+
+.shop {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 0 4rem;
+}
+.shop__title {
+    font-family: Poppins;
+    text-align: center;
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 2;
+    background: -webkit-linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.shop .money {
+    font-family: Poppins;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem ;
+}
+
+.shop-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+.shop-list__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    padding: 2rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.shop-list__item:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+}
+.shop-list__item .icon {
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    background: linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    cursor: pointer;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 2rem;
+    cursor: default;
+    width: fit-content;
+    margin-bottom: 2rem;
+}
+.shop-list__item .icon i {
+    color: #fff;
+    font-size: 2rem;
+}
+.shop-list__item .icon i {
+    font-size: 4rem;
+}
+.shop-list__item .name {
+    font-family: Poppins;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.shop-list__item .level {
+    background: -webkit-linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Poppins;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.shop-list__item .price {
+    cursor: pointer;
+    text-align: center;
+    border-radius: 999px;
+    display: flex;
+    padding: 1.5rem;
+    background: linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    cursor: pointer;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 1.7rem;
+    cursor: default;
+    width: fit-content;
+    margin-bottom: 2rem;
+}
+
+.shop-list__item .rarity {
+    font-family: Poppins;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+/**** CARD ****/
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 20%;
+    height: 350px;
+    margin : 1rem;
+}
+
+.card__img{
+    width: 40%;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem;
+}
+
+.paragraphe{
+    margin: 1rem;
+}
+
+.title{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 2;
+    margin-bottom: 4rem;
+    background: -webkit-linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.create-character{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2rem;
+}
+
+
+.background-create-character a{
+    color: #fff;
+    font-size: 5rem;
+}
+
+.card--background{
+    background: -webkit-linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+}
+
+.link__game{
+    background: #E35748;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.content a {
+    color : #fff;
+}
+
+.button a {
+    color : #fff;
+
+}
+
+
+.btn {
+    font-size: 1.5rem;
+    padding: 1rem;
+    background: #CA376D;
+    margin: 1rem;
+    color : #fff;
+}
+
+.btn:hover{
+    color: #fff;
+}
+
+.title__form{
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+.card:hover{
+
+    transform: scale(1.05);
+}
+
+.container{
+    padding: 1rem;
+}
+
+.open{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.open a {
+    background: -webkit-linear-gradient(93.73deg, #ED6439 3.47%, #BD2580 93.09%);
+    padding: 2rem;
+    color : #fff;
+    border-radius: 999px;
+}

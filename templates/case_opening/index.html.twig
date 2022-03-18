@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CaseOpeningController!{% endblock %}
+
+{% block body %}
+    <div class="open">
+        <img src="{{ asset('img/chest.png') }}">
+        <a href="{{ path('app_case_opened') }}">Acheter une boxe pour 50 <i class="fa-solid fa-coins"></i></a>
+    </div>
+
+{% endblock %}

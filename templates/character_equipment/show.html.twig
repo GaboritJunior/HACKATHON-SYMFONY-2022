@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CharacterEquipment{% endblock %}
+
+{% block body %}
+
+
+    <h1>CharacterEquipment</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ character_equipment.id }}</td>
+            </tr>
+            <tr>
+                <th>Ilvl</th>
+                <td>{{ character_equipment.ilvl }}</td>
+            </tr>
+            <tr>
+                <th>Equiped</th>
+                <td>{{ character_equipment.equiped ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_character_equipment_index') }}">back to list</a>
+
+    <a href="{{ path('app_character_equipment_edit', {'id': character_equipment.id}) }}">edit</a>
+
+{{ include('character_equipment/_delete_form.html.twig') }}
+
+{% endblock %}

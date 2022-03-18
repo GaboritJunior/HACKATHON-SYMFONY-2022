@@ -1,0 +1,15 @@
+<header class="header">
+    <nav class="header-nav">
+        <a href="{{ path('homepage') }}" class="header-nav__link"> <img class="header-nav__img" src="{{ asset('img/logo_texte.png') }}"> </a>
+        <ul class="header-nav-items">
+            <li class="header-nav-items__item--game"><a href="{{ path('app_character_index')}}">Jouer</a></li>
+
+             {% if app.user %}
+                 <li class="header-nav-items__item"><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+            {% else %}
+                <li class="header-nav-items__item"><a href="{{ path('app_register') }}"><i class=""></i>S'inscrire</a></li>
+            <li class="header-nav-items__item"><a href="{{ path('app_login') }}">Connexion</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>

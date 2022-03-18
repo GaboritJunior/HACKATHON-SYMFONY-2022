@@ -1,0 +1,15 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Création de guilde{% endblock %}
+
+{% block body %}
+    <main class="guild-new">
+
+
+        {{ include('guild/_form.html.twig') }}
+
+        <span class="error">{{ error }}</span>
+
+    </main>
+{% endblock %}

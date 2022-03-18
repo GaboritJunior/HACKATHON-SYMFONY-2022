@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Guild{% endblock %}
+
+{% block body %}
+    <h1>Edit Guild</h1>
+
+    {{ include('guild/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_guild_index') }}">back to list</a>
+
+    {{ include('guild/_delete_form.html.twig') }}
+{% endblock %}

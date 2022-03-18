@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+    <main class="guild">
+        <h2 class="guild__title">Mon personnage</h2>
+        {% for e in character_equipments %}
+        <ul class="guild-list">
+            <li class="guild-list__item">
+                <span class="name"> {{ e.equipment.name }}</span>
+                <span class="name"> Niveau d'objet : {{ e.ilvl }}</span>
+                <span class="name">  {{ e.equiped ? 'Equipé' : '' }}</span>
+                    <span class="button">
+                        <i class="fa-solid fa-person"></i>
+                    </span>
+            </li>
+        </ul>
+        {% endfor %}
+
+             <span class="button">
+                 <a href="{{ path('app_shop_index') }}">Shop </a>
+            </span>
+        <span class="button">
+                 <a href="{{ path('app_case_opening') }}">Ouverture de boxe  </a>
+            </span>
+            <span class="button">
+                 <a href="{{ path('app_guild_index') }}">Guilde </a>
+            </span>
+             <span class="button">
+                 <a href="{{ path('app_channel') }}">Chat</a>
+            </span>
+    <span class="button">
+                 <a href="{{ path('app_character_index') }}">Retourner sur la liste des personnages </a>
+        </span>
+
+
+
+    </main>
+<!--
+    <h1>CharacterEquipment index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ilvl</th>
+                <th>Equiped</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for character_equipment in character_equipments %}
+            <tr>
+                <td>{{ character_equipment.id }}</td>
+                <td>{{ character_equipment.ilvl }}</td>
+                <td>{{ character_equipment.equiped ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_character_equipment_show', {'id': character_equipment.id}) }}">show</a>
+                    <a href="{{ path('app_character_equipment_edit', {'id': character_equipment.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_character_equipment_new') }}">Create new</a>
+    ->
+{% endblock %}

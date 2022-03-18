@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Character index{% endblock %}
+
+{% block body %}
+
+    <h1 class="title">Liste des personnages</h1>
+    <div class="cards">
+        {% for character in characters %}
+            <div class="card">
+                <img class="card__img" src="{{ asset('img/logo.png') }}">
+                <div class="content">
+                    <p class="paragraphe">Pseudo : {{ character.username }}</p>
+                    <p class="paragraphe">Monnaie : {{ character.money }}<i class="fa-solid fa-coins"></i></p>
+                    <a class="link__game" href="{{ path('app_character_connect', {'id': character.id}) }}">Jouer</a>
+                 
+                </div>
+            </div>
+        {%  endfor %}
+
+        <div class="card card--background">
+            <div class="content">
+                <div class="create-character">
+                    <div class="background-create-character">
+                        <a href="{{ path('app_character_new') }}">+</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Money</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for character in characters %}
+            <tr>
+                <td>{{ character.id }}</td>
+                <td>{{ character.username }}</td>
+                <td>{{ character.money }}</td>
+                <td>
+                    <a href="{{ path('app_character_show', {'id': character.id}) }}">show</a>
+                    <a href="{{ path('app_character_edit', {'id': character.id}) }}">edit</a>
+                    <a href="{{ path('app_character_connect', {'id': character.id}) }}">connect</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+-->
+
+{% endblock %}

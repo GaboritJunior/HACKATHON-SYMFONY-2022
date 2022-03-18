@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CharacterResource{% endblock %}
+
+{% block body %}
+    <h1>Create new CharacterResource</h1>
+
+    {{ include('character_resource/_form.html.twig') }}
+
+    <a href="{{ path('app_character_resource_index') }}">back to list</a>
+{% endblock %}

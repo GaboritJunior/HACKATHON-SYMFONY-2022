@@ -1,0 +1,20 @@
+
+<section class="connexion">
+    <div class="card">
+        <h1 class="title__form"> Créer un personnage</h1>
+        {{ form_start(form) }}
+            {{ form_row(form.username, {
+                label: 'Pseudo'
+            }) }}
+            {{ form_row(form.faction, {
+                label: 'Faction'
+            }) }}
+            {{ form_row(form.speciality,{
+                label: 'Classe'
+            }) }}
+        <button class="btn">{{ button_label|default('Créer') }}</button>
+        {{ form_end(form) }}
+
+        <a href="{{ path('app_character_index') }}">Retour</a>
+    </div>
+</section>

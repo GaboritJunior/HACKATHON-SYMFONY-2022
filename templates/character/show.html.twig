@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Character{% endblock %}
+
+{% block body %}
+    <!--
+    <h1>Character</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ character.id }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ character.username }}</td>
+            </tr>
+            <tr>
+                <th>Money</th>
+                <td>{{ character.money }}</td>
+            </tr>
+        </tbody>
+    </table>
+    -->
+
+
+    <main class="guild">
+        <h2 class="guild__title">Mon personnage</h2>
+        <ul class="guild-list">
+                <li class="guild-list__item">
+                    <span class="name"> {{ character.username }}</span>
+                    <span class="owner">Monnaie :{{ character.money }}<i class="fa-solid fa-coins"></i></span>
+                    <a href="{{ path('app_guild_index') }}">
+                    <span class="button">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                    </a>
+                </li>
+
+            <span class="button">
+            <a href="{{ path('app_character_index') }}">Retourner sur la liste des personnages </a>
+            </span>
+        </ul>
+
+    </main>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+
+<section class="connexion">
+
+    <div class="card">
+
+{{ form_start(form) }}
+    {{ form_row(form.name,{
+        label : 'Nom de la guilde'
+    }) }}
+    <button class="btn">{{ button_label|default('Créer') }} pour 100 <i class="fa-solid fa-coins"></i></button>
+{{ form_end(form) }}
+        <a href="{{ path('app_guild_index') }}">Retour</a>
+    </div>
+</section>
+

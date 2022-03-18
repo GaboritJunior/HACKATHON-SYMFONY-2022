@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CharacterResource index{% endblock %}
+
+{% block body %}
+    <h1>CharacterResource index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Quantity</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for character_resource in character_resources %}
+            <tr>
+                <td>{{ character_resource.id }}</td>
+                <td>{{ character_resource.quantity }}</td>
+                <td>
+                    <a href="{{ path('app_character_resource_show', {'id': character_resource.id}) }}">show</a>
+                    <a href="{{ path('app_character_resource_edit', {'id': character_resource.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_character_resource_new') }}">Create new</a>
+{% endblock %}
